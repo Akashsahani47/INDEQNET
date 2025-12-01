@@ -2,7 +2,7 @@ import React from 'react'
 
 const Insights = () => {
   const stats = [
-    { number: "25+", title: "Years Experience", badge: "SEBI Certified" },
+    { number: "75+", title: "Years Experience", badge: "SEBI Certified" },
     { number: "20k+", title: "Trading Community", badge: "Research Analyst" },
     { number: "300+", title: "Customer Reviews", badge: "Expert Analyst" }
   ];

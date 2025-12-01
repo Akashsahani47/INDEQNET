@@ -1,119 +1,207 @@
 'use client'
-import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { Users, Award, BookOpen, Target, TrendingUp, Shield } from "lucide-react";
 
 const About = () => {
   const router = useRouter();
+  
+  const features = [
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "75+ Years Combined Experience",
+      description: "Our founders bring decades of market expertise"
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "SEBI Certified Research Analysts",
+      description: "Regulatory compliance and professional standards"
+    },
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: "Investor Education",
+      description: "Transformative learning experiences"
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Market Insights",
+      description: "Data-driven analysis and strategies"
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Growth Focused",
+      description: "Empowering financial success"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Trust & Integrity",
+      description: "Ethical practices and transparency"
+    }
+  ];
+
+  const founders = [
+    {
+      name: "N. S. Fidai",
+      role: "Market Veteran & Technical Analyst",
+      experience: "30+ years in Indian equity markets",
+      expertise: "NISM XV Certified Technical Analyst"
+    },
+    {
+      name: "Rajeev Jhunjhunwala",
+      role: "CFA & Value Investor",
+      experience: "30+ years leadership experience",
+      expertise: "Specializes in mid-cap, small-cap investments"
+    },
+    {
+      name: "Ram Iyer",
+      role: "SEBI Research Analyst",
+      experience: "30+ years in finance",
+      expertise: "Value investing and company research"
+    }
+  ];
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-12 px-4 sm:py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-stretch min-h-[60vh] sm:min-h-[80vh]">
+        
+        {/* Header Section */}
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full border border-green-200 mb-6">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <h3 className="text-green-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
+              About us
+            </h3>
+          </div>
           
-          {/* Image Section - Mobile First */}
-          <div className="relative group h-full flex order-2 lg:order-1">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500 w-full h-[400px] sm:h-full">
-              <Image 
-                src="/p5.png" 
-                alt="Indeqnet Private Limited - Market Experts"
-                fill
-                className="object-cover"
-                priority
-              />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
-            </div>
-            
-            {/* Floating Experience Badge - Mobile Responsive */}
-            <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-gradient-to-r from-green-500 to-blue-600 text-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl transform rotate-3 z-10">
-              <div className="text-center">
-                <div className="text-xl sm:text-3xl font-bold">75+</div>
-                <div className="text-xs sm:text-sm font-medium">Combined Years</div>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+            Empowering Market
+            <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent text-xl sm:text-4xl md:text-5xl lg:text-6xl">
+              Participants Through Knowledge
+            </span>
+          </h1>
+          
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+            Bridging the knowledge gap in India's investor education ecosystem
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {/* Left Column - About */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-200">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
+              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                <span className="font-bold text-blue-600">Indeqnet Private Limited (IPL)</span> is dedicated to providing premium, knowledge-driven experiences that are both accessible and affordable. We empower market participants with insightful strategies, practical expertise, and invaluable networking opportunities.
+              </p>
+              
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                <p className="text-gray-800 italic">
+                  "With over 75 years of collective experience in the Indian equity market, our mission is to create a transformative learning platform that empowers market participants to achieve success."
+                </p>
               </div>
             </div>
 
-            {/* Pattern Decoration - Hidden on mobile */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-green-400/10 rounded-full hidden sm:block"></div>
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-400/10 rounded-full hidden sm:block"></div>
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {features.map((feature, index) => (
+                <div key={index} className="bg-white rounded-xl shadow p-4 border border-gray-200 hover:shadow-md transition-shadow duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center mb-3">
+                    <div className="text-white">
+                      {feature.icon}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-1">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Content Section - Mobile First */}
-          <div className="space-y-6 sm:space-y-8 flex flex-col justify-center h-full order-1 lg:order-2">
-            {/* Header Section */}
-            <div className="space-y-3 sm:space-y-4">
-              <div className="inline-flex items-center gap-2 bg-green-50 px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-green-200">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <h3 className="text-green-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
-                  About us
-                </h3>
+          {/* Right Column - Founders Highlight */}
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg p-6 text-white">
+              <div className="text-center mb-6">
+                <div className="text-4xl font-bold mb-2">75+</div>
+                <div className="text-sm opacity-90">Years Combined Experience</div>
               </div>
               
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Empowering Market
-                <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent text-xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Participants Through Knowledge
-                </span>
-              </h1>
-            </div>
-
-            {/* Content Paragraphs */}
-            <div className="space-y-4 sm:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-              <p>
-                <span className="font-bold text-blue-600">Indeqnet Private Limited (IPL)</span> is dedicated to bridging the knowledge gap in the investor education ecosystem with premium, knowledge-driven experiences.
-              </p>
+              <h3 className="text-lg font-bold mb-4 text-center">Visionary Leadership</h3>
               
-              <p>
-                Founded by three visionary leaders with <span className="font-bold text-blue-600">over 75 years of combined experience</span> in the Indian equity market, we offer transformative learning that empowers market participants to navigate with confidence.
-              </p>
-              
-              <p>
-                Our mission is to create accessible platforms featuring <span className="font-bold text-green-600">SEBI Certified Research Analysts</span>, providing insightful strategies, practical expertise, and invaluable networking opportunities.
-              </p>
-              
-              <p className="text-lg sm:text-xl font-semibold text-gray-900 italic border-l-4 border-green-400 pl-3 sm:pl-4 py-2">
-                Join us in transforming your financial future through knowledge and innovation!
-              </p>
-            </div>
-
-            {/* Features Grid - Mobile Responsive */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 py-4 sm:py-6">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-600 font-bold text-sm sm:text-base">✓</span>
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">75+ Years Combined</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 font-bold text-sm sm:text-base">✓</span>
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">SEBI Certified</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-600 font-bold text-sm sm:text-base">✓</span>
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">Investor Education</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 font-bold text-sm sm:text-base">✓</span>
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">Market Insights</span>
+              <div className="space-y-4">
+                {founders.map((founder, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <div className="font-semibold text-green-300">{founder.name}</div>
+                    <div className="text-sm opacity-90">{founder.role}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* CTA Buttons - Mobile Responsive */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
-              <button onClick={()=> router.push('/contactUS')} className="bg-gradient-to-r cursor-pointer from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base">
-                Contact Us
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </button>
+            {/* Services Card */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">Our Services</h3>
+              <ul className="space-y-3">
+                {[
+                  "Research Services & Market Analysis",
+                  "Investor Education Programs",
+                  "Seminars & Networking Events",
+                  "SEBI Registered RA & IA Platform",
+                  "Investment Advisory"
+                ].map((service, index) => (
+                  <li key={index} className="flex items-center gap-2 text-gray-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>{service}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
+
+        {/* Values Section */}
+        <div className="mb-1">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Core Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 border border-green-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-green-600 font-bold">✓</span>
+                </div>
+                Knowledge Excellence
+              </h3>
+              <p className="text-gray-600">
+                Delivering high-quality, practical, and accessible knowledge-driven experiences that foster growth and confidence.
+              </p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-blue-600 font-bold">✓</span>
+                </div>
+                Investor Empowerment
+              </h3>
+              <p className="text-gray-600">
+                Equipping market participants with the tools and insights needed to navigate financial markets successfully.
+              </p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-6 border border-purple-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                  <span className="text-purple-600 font-bold">✓</span>
+                </div>
+                Innovation & Growth
+              </h3>
+              <p className="text-gray-600">
+                Continuously evolving our approach to provide cutting-edge solutions in investor education and market analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </section>
   );

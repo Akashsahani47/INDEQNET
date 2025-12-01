@@ -48,7 +48,7 @@ const Service = () => {
   const router = useRouter();
 
   const stats = [
-    { number: "25+", label: "Years Experience" },
+    { number: "75+", label: "Years Experience" },
     { number: "500+", label: "Clients Served" },
     { number: "98%", label: "Client Satisfaction" },
     { number: "SEBI", label: "Certified" }

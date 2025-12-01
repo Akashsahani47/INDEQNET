@@ -231,7 +231,7 @@ const Contact = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl flex items-center justify-center text-white mx-auto mb-4">
                 <Award className="w-8 h-8" />
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">25+ Years Experience</h4>
+              <h4 className="font-bold text-gray-900 mb-2">75+ Years Experience</h4>
               <p className="text-gray-600">Proven track record in market analysis</p>
             </div>
             <div className="text-center">
