@@ -1,10 +1,7 @@
-'use client'
-import React from "react";
+import React from 'react'
 import { useRouter } from "next/navigation";
-
 const Disclaimer = () => {
   const router = useRouter();
-  
   return (
     <section className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-12 px-4 sm:py-20">
       <div className="max-w-5xl mx-auto">
@@ -197,4 +194,4 @@ const Disclaimer = () => {
   );
 };
 
-export default Disclaimer;
+export default Disclaimer
